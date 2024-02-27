@@ -1,54 +1,37 @@
-const inquirer = require('inquirer');
 
-
-let questionsAsked = 0;
-function askUser(question){
-    return new Promise ((resolve) =>{
-
-        inquirer
-        .prompt([
-          {
-            type: 'input',
-            message: `
-            ${question}
-            `,
-            name: `q${questionsAsked}`
-          },
-        ])
-        .then((response) => {
-          questionsAsked++;
-          resolve(response);
-        })
-        
-      })
+const questions = {
+    fileName: 
+    `
+    please input file name:
+    NOTE: .svg will automatically be added to the name
+    so do not include it
+    `,
+    textInput: 
+    `
+    please input the text you want in the center of the logo:
+    (three characters max)
+    `,
+    textColor: 
+    `
+    please intput a color for your text. It can be
+    either a generic color such as 'red' or a 
+    hexidecimal color code including the # :
+    `,
+    shape: 
+    `
+    please input a shape
+    currently supported shapes: Triangle, Rectangle (Square), and Circle :
+    `,
+    shapeColor: 
+    `
+    please intput a color for your shape. It can be
+    either a generic color such as 'red' or a 
+    hexidecimal color code including the # :
+    `,
+    border: 
+    `
+    do you want a border? 
+    input: 'yes' or 'no' :
+    `,
 }
-
-function askQuestions (obj){
-  return new Promise (async (answer) =>{
-
-    inquirer
-    .prompt([
-      {
-        type: 'input',
-        message: `
-        hello! welcome to Simple Logo Generator. we're going
-        to ask you some questions and you're responses will help
-        us to generate a unique logo! 
-            press enter to continue
-        `,
-        name: 'welcome',
-      },
-    ])
-    .then(async function (response) {
-        for( let response in obj){
-          let input = await askUser(obj[response]);
-          array = Object.entries(input)
-          obj[response] = array[0][1];
-          console.log(obj[response]);
-        }
-        answer(obj);
-      }
-      );
-    })
-    }
-    module.exports = askQuestions;
+module.exports =questions;

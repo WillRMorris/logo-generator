@@ -1,4 +1,4 @@
-
+//parent class shapes for all shared attributes of the shapes
 class Shape {
     constructor(x, y, fill, border =false ){
         this.x = x;
@@ -8,6 +8,7 @@ class Shape {
         this.borderInput =this.borderStyle(border);
 
     }
+    //uses border boolean input to generate a basic border if true.
     borderStyle (borderVal){
         if (borderVal){
             let style = `stroke:black;stroke-width:3`
@@ -18,7 +19,7 @@ class Shape {
 
     }
 }
-
+//Triangle obj that creates and holds the line needed to generate the svg
 class Triangle {
     constructor(x, y, x2, y2, x3, y3, fill, border =false){
         Shape.call(x,y,fill, border);
@@ -31,6 +32,8 @@ class Triangle {
     }
     
 }
+
+//Rectangle obj that creates and holds the line needed to generate the svg
 class Rectangle {
     constructor(x, y, width, height, fill, border = false){
         Shape.call(x,y,fill, border);
@@ -39,6 +42,8 @@ class Rectangle {
         this.line = `  <rect width="200" height="100" x="${this.x}" y="${this.y}" rx="0" ry="0" style="fill:${this.fill};${this.borderInput}" />`   
     }
 }
+
+//Circle obj that creates and holds the line needed to generate the svg
 class Circle {
     constructor(x, y, r, fill, border = false){
         Shape.call(x,y,fill, border);
