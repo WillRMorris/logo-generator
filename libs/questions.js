@@ -35,15 +35,17 @@ const questions = {
     do you want a border? 
     input: 'yes' or 'no' :
     `,
-    borderBool: false,
 
-    //checks and sets borderBool using border, which holds the input
-    getBoolBorder () {
-        if (this.border === 'yes' || this.border === 'Yes'){
-            this.borderBool = true;
-        } else{
-            this.borderBool = false
-        }
-    },
 }
-module.exports =questions;
+//checks and sets borderBool using border, which holds the input
+function getBoolBorder (border) {
+    if (border === 'yes' || border === 'Yes'){
+        return true;
+    } else{
+        return false;
+    }
+}
+module.exports ={
+    questions,
+    getBoolBorder
+}

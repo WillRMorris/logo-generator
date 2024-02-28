@@ -20,9 +20,9 @@ class Shape {
     }
 }
 //Triangle obj that creates and holds the line needed to generate the svg
-class Triangle {
+class Triangle extends Shape {
     constructor(x, y, x2, y2, x3, y3, fill, border =false){
-        Shape.call(x,y,fill, border);
+        super(x,y,fill, border);
         this.x2 = x2;
         this.y2 = y2;
         this.x3 = x3;
@@ -34,9 +34,9 @@ class Triangle {
 }
 
 //Rectangle obj that creates and holds the line needed to generate the svg
-class Rectangle {
+class Rectangle extends Shape {
     constructor(x, y, width, height, fill, border = false){
-        Shape.call(x,y,fill, border);
+        super(x,y,fill, border);
         this.width = width;
         this.height = height;
         this.line = `  <rect width="200" height="100" x="${this.x}" y="${this.y}" rx="0" ry="0" style="fill:${this.fill};${this.borderInput}" />`   
@@ -44,9 +44,9 @@ class Rectangle {
 }
 
 //Circle obj that creates and holds the line needed to generate the svg
-class Circle {
+class Circle extends Shape {
     constructor(x, y, r, fill, border = false){
-        Shape.call(x,y,fill, border);
+        super(x,y,fill, border);
         this.r = r;
         this.line = `<circle r="${this.r}" cx="${this.x}" cy="${this.y}" style ="fill:${this.fill};${this.borderInput}" />`
         
@@ -54,26 +54,26 @@ class Circle {
 }
 
 //based on the data.shape, returns the correct shape with a default of circle.
-function makeShape (data){
+function makeShape (data, border){
 
     let shape;
     switch(data.shape){
         case `triangle`:
         case `Triangle`:
-            shape = new Triangle(150, 300, 0, 0, 0, 300, data.fill, data.borderBool)
+            shape = new Triangle(150, 300, 0, 0, 0, 300, data.shapeColor, border)
             break;
         case `rectangle`:
         case `Rectangle`:
         case `square`:
         case `Square`:
-            shape = new Rectangle(0,0, 300, 300, data.fill, data.borderBool)
+            shape = new Rectangle(0,0, 300, 300, data.shapeColor, border)
              break;
         case `circle`:
         case `Circle`:
-            shape = new Circle(150, 150, 150, data.fill, data.borderBool)
+            shape = new Circle(150, 150, 150, data.shapeColor, border)
             break;
         default: 
-        shape = new Circle(150, 150, 150, data.fill, data.borderBool)
+        shape = new Circle(150, 150, 150, data.shapeColor, border)
         break;
     }
     return shape;
