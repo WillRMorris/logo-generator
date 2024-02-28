@@ -53,8 +53,29 @@ class Circle {
     }
 }
 
-module.exports = {
-    Triangle,
-    Rectangle,
-    Circle,
+//based on the data.shape, returns the correct shape with a default of circle.
+function makeShape (data){
+
+    let shape;
+    switch(data.shape){
+        case `triangle`:
+        case `Triangle`:
+            shape = new Triangle(150, 300, 0, 0, 0, 300, data.fill, data.borderBool)
+            break;
+        case `rectangle`:
+        case `Rectangle`:
+        case `square`:
+        case `Square`:
+            shape = new Rectangle(0,0, 300, 300, data.fill, data.borderBool)
+             break;
+        case `circle`:
+        case `Circle`:
+            shape = new Circle(150, 150, 150, data.fill, data.borderBool)
+            break;
+        default: 
+        shape = new Circle(150, 150, 150, data.fill, data.borderBool)
+        break;
+    }
+    return shape;
 }
+module.exports = makeShape;

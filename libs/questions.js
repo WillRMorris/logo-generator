@@ -1,4 +1,6 @@
+const { Triangle } = require("./shapes");
 
+//obj to hold all questions
 const questions = {
     fileName: 
     `
@@ -33,5 +35,15 @@ const questions = {
     do you want a border? 
     input: 'yes' or 'no' :
     `,
+    borderBool: false,
+
+    //checks and sets borderBool using border, which holds the input
+    getBoolBorder () {
+        if (this.border === 'yes' || this.border === 'Yes'){
+            this.borderBool = true;
+        } else{
+            this.borderBool = false
+        }
+    },
 }
 module.exports =questions;
