@@ -11,32 +11,39 @@
   - [License](#license)
   
   ## Description
-    I created this project to easily generate simple logos using svg. using this function you can create  a simple logo with only a couple small lines of input. This was my first time touching svg formatting so it was interesting to see how that worked in js.
+    I created this project to easily generate simple logos using svg. 
+    using this function you can create  a simple logo with only a 
+    couple small lines of input. This was my first time touching 
+    svg formatting so it was interesting to see how that worked in js.
 
   ## Installation
     to install, simply clone the repo and run it in the command line.
 
   ## Usage
-    simply follow the prompts in the commandline and the system does the rest! hexidecimals or generic names are used for colors, and a generic lowercase system of input with no additional spaces or characters is required.
+    simply follow the prompts in the commandline and the system 
+    does the rest! hexidecimals or generic names are used for 
+    colors, and a generic lowercase system of input with no 
+    additional spaces or characters is required.
 
   ## How to Contribute
-    fork and PR! I'll take a look at it. always open to contribution from others.
+    fork and PR! I'll take a look at it. always open to 
+    contribution from others.
 
   ## Tests
     tests go here
 
   ## Questions
-    if you have questions you can reach me at 
-    [github](https://github.com/WillRMorris)
+    if you have questions you can reach me at
+    https://github.com/WillRMorris
     or email me at: Willboy875@gmail.com
 
   ## Credits
-    non yet!
+    no outside contributions yet!
 
   ## License
   MIT License
 
-    Copyright (c) [year] [fullname]
+    Copyright (c) 2024 William R. Morris
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
