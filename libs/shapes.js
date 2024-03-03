@@ -70,7 +70,7 @@ function makeShape (shapeInput,color, border){
              break;
         case `circle`:
         case `Circle`:
-            shape = new Circle(150, 150, 150, color, border)
+            shape = new Circle(150, 150, 140, color, border)
             break;
         default: 
         shape = new Circle(150, 150, 140, color, border)

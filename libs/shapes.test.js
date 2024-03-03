@@ -1,5 +1,5 @@
 
-const shapes = require(`./libs/shapes.js`);
+const shapes = require(`./shapes.js`);
 
 describe('shapes', () => {
     it('should make svg appropriate text', () => {

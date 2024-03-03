@@ -17,7 +17,7 @@
     svg formatting so it was interesting to see how that worked in js.
 
   ## Installation
-    to install, simply clone the repo and run it in the command line.
+    to install, simply clone the repo and run it in the command line using Node.js
 
   ## Usage
     simply follow the prompts in the commandline and the system 
@@ -25,12 +25,14 @@
     colors, and a generic lowercase system of input with no 
     additional spaces or characters is required.
 
+  link to demo video: https://drive.google.com/file/d/14e_v92ecXEsIsAo9RbrJBLDvch00z2rU/view 
   ## How to Contribute
     fork and PR! I'll take a look at it. always open to 
     contribution from others.
 
   ## Tests
-    tests go here
+    tests so far include unit tests in shape.test.js that ensure
+    that our shapes are outputting their proper lines for the svg. 
 
   ## Questions
     if you have questions you can reach me at
