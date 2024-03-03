@@ -1,4 +1,4 @@
-const { Triangle } = require("./shapes");
+
 
 //obj to hold all questions
 const questions = {

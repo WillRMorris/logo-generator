@@ -13,9 +13,9 @@ async function init() {
     //gets bool based off of user input
     let border = questions.getBoolBorder(obj.border);
     //gets the shape user inputed including the shape.line value
-    let shape = shapes(obj, border);
+    let shape = shapes(obj.shape, obj.shapeColor, border);
     //takes the text values from the user and makes the text line for the svg
-    let textLine = writer.getSVGText(obj.textInput,obj.textColor);
+    let textLine = writer.getSVGText(obj.textInput,obj.textColor, obj.shape);
     //combines the shapeline and text line in proper svg format
     let data = writer.ToSVGFormat(shape.line, textLine);
     //creates svg file

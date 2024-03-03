@@ -27,7 +27,7 @@ class Triangle extends Shape {
         this.y2 = y2;
         this.x3 = x3;
         this.y3 = y3;
-        this.line = `  <polygon points="${this.x},${this.y},${this.x2},${this.y2},${this.x3},${this.y3}," style="fill:${this.fill};${this.borderInput}" />`
+        this.line = `<polygon points="${this.x}, ${this.y}, ${this.x2}, ${this.y2}, ${this.x3}, ${this.y3}" style="fill:${this.fill};${this.borderInput}" />`
 
     }
     
@@ -39,7 +39,7 @@ class Rectangle extends Shape {
         super(x,y,fill, border);
         this.width = width;
         this.height = height;
-        this.line = `  <rect width="200" height="100" x="${this.x}" y="${this.y}" rx="0" ry="0" style="fill:${this.fill};${this.borderInput}" />`   
+        this.line = `<rect width="${this.width}" height="${this.height}" x="${this.x}" y="${this.y}" rx="0" ry="0" style="fill:${this.fill};${this.borderInput}" />`   
     }
 }
 
@@ -54,26 +54,26 @@ class Circle extends Shape {
 }
 
 //based on the data.shape, returns the correct shape with a default of circle.
-function makeShape (data, border){
+function makeShape (shapeInput,color, border){
 
     let shape;
-    switch(data.shape){
+    switch(shapeInput){
         case `triangle`:
         case `Triangle`:
-            shape = new Triangle(150, 300, 0, 0, 0, 300, data.shapeColor, border)
+            shape = new Triangle(0,0,150,300,300,0, color, border)
             break;
         case `rectangle`:
         case `Rectangle`:
         case `square`:
         case `Square`:
-            shape = new Rectangle(0,0, 300, 300, data.shapeColor, border)
+            shape = new Rectangle(0,0, 300, 300, color, border)
              break;
         case `circle`:
         case `Circle`:
-            shape = new Circle(150, 150, 150, data.shapeColor, border)
+            shape = new Circle(150, 150, 150, color, border)
             break;
         default: 
-        shape = new Circle(150, 150, 150, data.shapeColor, border)
+        shape = new Circle(150, 150, 140, color, border)
         break;
     }
     return shape;
